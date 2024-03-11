@@ -1,3 +1,5 @@
+.people,
+.museum,
 .gallery__wrapper {
   max-width: var(--max-width);
   width: 100%;
@@ -59,6 +61,7 @@
   margin: auto;
 }
 
+.museum-sect,
 .comments,
 .visitors,
 .gallery-main {
@@ -81,4 +84,34 @@
 .home {
   display: grid;
   gap: 40px;
+}
+
+.buyer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 100px 0;
+  gap: 40px;
+}
+
+.museum-sect h4,
+.buyer h2 {
+  padding: 0px;
+}
+
+.museum-sect h4 {
+  padding-bottom: 40px;
+}
+.museum {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.museum__imgs {
+  display: grid;
+  gap: 20px;
+}
+
+.people img {
+  width: 80%;
 }
