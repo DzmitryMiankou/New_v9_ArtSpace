@@ -26,10 +26,9 @@
 
 .header-nav-items {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   align-items: center;
   justify-content: space-between;
-  width: 450px;
 }
 
 .header-nav__link {

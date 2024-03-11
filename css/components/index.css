@@ -210,7 +210,7 @@
 }
 
 .art__wrapper h4 {
-  padding: 0 0 40px 0;
+  padding: 0;
 }
 
 .form-main {
@@ -259,6 +259,20 @@ input[name="Name"] {
   grid-area: chekbox;
 }
 
+.links__toScroll {
+  height: 70px;
+  background-color: black;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  transition: 200ms;
+  border: 3px solid black;
+  cursor: pointer;
+  max-width: 250px;
+  display: grid;
+  place-items: center;
+}
+
 .form_button {
   grid-area: button;
   height: 70px;
@@ -271,6 +285,18 @@ input[name="Name"] {
   cursor: pointer;
 }
 
+.artists__wrapper h2 {
+  padding: 0;
+}
+
+.artists__wrapper,
+.art-content,
+.home-art__wrapper {
+  display: grid;
+  gap: 20px;
+}
+
+.links__toScroll:hover,
 .form_button:hover {
   color: black;
   background-color: transparent;

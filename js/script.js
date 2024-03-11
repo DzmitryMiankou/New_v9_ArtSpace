@@ -63,38 +63,41 @@ const asideItems = document.querySelector(".aside-items");
 const artItem = [...document.querySelectorAll(".artists-items__item")];
 
 function observeControl() {
-  aside.style.height = main.offsetHeight - header.offsetHeight + "px";
-  asideItems.style.height =
-    main.offsetHeight - header.offsetHeight - 150 + "px";
-
-  const scrollRoot = homeArt.offsetHeight + header.offsetHeight;
-  const options = {
-    rootMargin: `${scrollRoot * -1}px 0px ${scrollRoot + 4}px 0px`,
-    threshold: 0,
-  };
-
-  function handleIntersection(entries, options) {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        text.forEach((e) => e.classList.add("header-nav__link--theme"));
-        header.classList.add("header--theme");
-        rectLogo.classList.add("logo__rect--theme");
-        logoText.classList.add("logo__text--thema");
-      }
-      if (entry.isIntersecting) {
-        text.forEach((e) => e.classList.remove("header-nav__link--theme"));
-        header.classList.remove("header--theme");
-        rectLogo.classList.remove("logo__rect--theme");
-        logoText.classList.remove("logo__text--thema");
-        homeArt.classList.remove("home-art--theme");
-      }
-    }, options);
+  if (aside) {
+    aside.style.height = main.offsetHeight - header.offsetHeight + "px";
+    asideItems.style.height =
+      main.offsetHeight - header.offsetHeight - 150 + "px";
   }
+  if (homeArt) {
+    const scrollRoot = homeArt.offsetHeight + header.offsetHeight;
+    const options = {
+      rootMargin: `${scrollRoot * -1}px 0px ${scrollRoot + 4}px 0px`,
+      threshold: 0,
+    };
 
-  const observer = new IntersectionObserver(handleIntersection, options);
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
+    function handleIntersection(entries, options) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          text.forEach((e) => e.classList.add("header-nav__link--theme"));
+          header.classList.add("header--theme");
+          rectLogo.classList.add("logo__rect--theme");
+          logoText.classList.add("logo__text--thema");
+        }
+        if (entry.isIntersecting) {
+          text.forEach((e) => e.classList.remove("header-nav__link--theme"));
+          header.classList.remove("header--theme");
+          rectLogo.classList.remove("logo__rect--theme");
+          logoText.classList.remove("logo__text--thema");
+          homeArt.classList.remove("home-art--theme");
+        }
+      }, options);
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  }
 }
 
 function focusController(el, className) {
