@@ -20,6 +20,18 @@
   }
 }
 
+.artists__wrapper {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 50px;
+}
+
+.artists-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
 .block_stiky {
   display: flex;
   justify-content: center;
@@ -149,4 +161,33 @@
   padding: 0 50px;
   position: relative;
   display: grid;
+}
+
+.artists {
+  display: grid;
+  place-items: center;
+}
+
+.artists-items__item {
+  position: relative;
+  overflow: hidden;
+}
+.artists-items__content {
+  position: absolute;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.68);
+  height: 100%;
+  width: 90%;
+  padding: 10px;
+  transition: 300ms;
+  border-bottom: 10px solid var(--yellow);
+}
+
+.artists-items__content--active {
+  transform: translate(-90%, 0px);
+}
+
+.artists-items__content h4 {
+  padding: 0;
+  color: white;
 }

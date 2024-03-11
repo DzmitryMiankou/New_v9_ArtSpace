@@ -58,6 +58,8 @@ const rectLogo = document.querySelector(".logo__rect");
 const homeArt = document.querySelector(".home-art");
 const main = document.querySelector("[main-root]");
 
+const artItem = [...document.querySelectorAll(".artists-items__item")];
+
 function observeControl() {
   const scrollRoot = homeArt.offsetHeight + header.offsetHeight;
   console.log(scrollRoot);
@@ -90,9 +92,24 @@ function observeControl() {
   });
 }
 
+function focusController(el) {
+  const addCass = (elem) =>
+    elem.forEach((st) => st.classList.add("artists-items__content--active"));
+  const delCass = (elem) =>
+    elem.forEach((st) => st.classList.remove("artists-items__content--active"));
+
+  el.forEach((e) =>
+    e.addEventListener("mousemove", () => addCass([e.children[0]]))
+  );
+  el.forEach((e) =>
+    e.addEventListener("mouseout", () => delCass([e.children[0]]))
+  );
+}
+
 function start() {
   window.addEventListener("resize", () => observeControl());
   observeControl();
+  focusController(artItem);
   /*onClickHandler();
 
   window.addEventListener(whatEventUse, (event) => {
