@@ -56,13 +56,18 @@ const logoText = document.querySelector(".logo__text");
 const header = document.querySelector(".header");
 const rectLogo = document.querySelector(".logo__rect");
 const homeArt = document.querySelector(".home-art");
-const main = document.querySelector("[main-root]");
-
+const main = document.querySelector(".main");
+const footer = document.querySelector(".footer");
+const aside = document.querySelector(".aside");
+const asideItems = document.querySelector(".aside-items");
 const artItem = [...document.querySelectorAll(".artists-items__item")];
 
 function observeControl() {
+  aside.style.height = main.offsetHeight - header.offsetHeight + "px";
+  asideItems.style.height =
+    main.offsetHeight - header.offsetHeight - 150 + "px";
+
   const scrollRoot = homeArt.offsetHeight + header.offsetHeight;
-  console.log(scrollRoot);
   const options = {
     rootMargin: `${scrollRoot * -1}px 0px ${scrollRoot + 4}px 0px`,
     threshold: 0,
@@ -92,15 +97,14 @@ function observeControl() {
   });
 }
 
-function focusController(el) {
-  const addCass = (elem) =>
-    elem.forEach((st) => st.classList.add("artists-items__content--active"));
+function focusController(el, className) {
+  const addCass = (elem) => elem.forEach((st) => st.classList.add(className));
   const delCass = (elem) =>
-    elem.forEach((st) => st.classList.remove("artists-items__content--active"));
+    elem.forEach((st) => st.classList.remove(className));
 
-  el.forEach((e) =>
-    e.addEventListener("mousemove", () => addCass([e.children[0]]))
-  );
+  el.forEach((e) => {
+    e.addEventListener("mousemove", () => addCass([e.children[0]]));
+  });
   el.forEach((e) =>
     e.addEventListener("mouseout", () => delCass([e.children[0]]))
   );
@@ -109,7 +113,8 @@ function focusController(el) {
 function start() {
   window.addEventListener("resize", () => observeControl());
   observeControl();
-  focusController(artItem);
+  focusController(artItem, "artists-items__content--active");
+  focusController([footer], "footer--theme");
   /*onClickHandler();
 
   window.addEventListener(whatEventUse, (event) => {

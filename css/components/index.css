@@ -21,10 +21,17 @@
 }
 
 .artists__wrapper,
-.art__wrapper {
+.form__wrapper,
+.art__wrapper,
+.footer__wrapper {
   max-width: var(--max-width);
   margin: auto;
-  padding: 0 50px;
+  padding: 100px 50px;
+}
+
+.artists {
+  border-bottom: black 20px dashed;
+  border-top: var(--yellow) 20px dashed;
 }
 
 .artists-items {
@@ -43,6 +50,7 @@
 .main {
   min-height: 400px;
   background-color: var(--yellow);
+  padding: 50px 0 100px 0;
 }
 
 .main__wrapper {
@@ -90,7 +98,6 @@
   position: -webkit-sticky;
   position: sticky;
   width: 500px;
-  height: 100vh;
   background-color: black;
   justify-self: end;
   padding: 0 50px;
@@ -103,7 +110,6 @@
   padding: 30px 0;
   background-color: black;
   z-index: 22;
-  height: 100%;
 }
 .aside-items {
   overflow-y: auto;
@@ -130,7 +136,7 @@
 }
 
 .aside-items__item img:hover {
-  width: 300px;
+  width: 200px;
   position: absolute;
   z-index: 2;
   cursor: zoom-in;
@@ -190,5 +196,128 @@
 
 .artists-items__content h4 {
   padding: 0;
+  color: var(--yellow);
+}
+
+.artists-items__content p {
   color: white;
+}
+
+.art__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.art__wrapper h4 {
+  padding: 0 0 40px 0;
+}
+
+.form-main {
+  background-color: var(--yellow);
+}
+
+.form__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+input,
+textarea {
+  border: none;
+  padding: 10px;
+  font-family: 18px;
+}
+
+.form {
+  display: grid;
+  grid-template-areas:
+    "name email"
+    "comment comment"
+    "chekbox ."
+    "button .";
+  gap: 10px;
+}
+
+input[name="email"] {
+  grid-area: email;
+  height: 70px;
+}
+
+input[name="Name"] {
+  grid-area: name;
+  height: 70px;
+}
+
+.form textarea {
+  grid-area: comment;
+  resize: vertical;
+}
+
+.chekbox {
+  grid-area: chekbox;
+}
+
+.form_button {
+  grid-area: button;
+  height: 70px;
+  background-color: black;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  transition: 200ms;
+  border: 3px solid black;
+  cursor: pointer;
+}
+
+.form_button:hover {
+  color: black;
+  background-color: transparent;
+  border: 3px solid black;
+}
+
+.footer {
+  background: black;
+}
+
+.form__title {
+  font-size: 130px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.footer p,
+.footer a,
+.footer h5 {
+  color: rgb(134, 134, 134);
+  transition: 200ms;
+}
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer--theme,
+.footer--theme p,
+.footer--theme a,
+.footer--theme h5 {
+  color: white;
+  transition: 200ms;
+}
+.footer h5 {
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.privases {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer a:hover {
+  color: rgba(255, 255, 0, 0.758);
 }
