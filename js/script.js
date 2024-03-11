@@ -3,7 +3,18 @@
 window.addEventListener("load", function () {
   start();
 });
-/*
+
+const sections = [...document.querySelectorAll("[scroll-el]")];
+const text = [...document.querySelectorAll(".header-nav__link")];
+const logoText = document.querySelector(".logo__text");
+const header = document.querySelector(".header");
+const rectLogo = document.querySelector(".logo__rect");
+const homeArt = document.querySelector(".home-art");
+const main = document.querySelector(".main");
+const footer = document.querySelector(".footer");
+const aside = document.querySelector(".aside");
+const asideItems = document.querySelector(".aside-items");
+const artItem = [...document.querySelectorAll(".artists-items__item")];
 const HEADER_NAV = document.querySelector("." + "header-nav");
 const HEADER_BLUER = document.querySelector(".header__bluer");
 const whatDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -36,31 +47,6 @@ function openHeaderMenu(event) {
     return () => clearTimeout(timer);
   }
 }
-
-const init = 500;
-function onClickHandler() {
-  if (!BUTTONS_SLIDERL || !BUTTONS_SLIDERR) return;
-  BUTTONS_SLIDERL.addEventListener(
-    whatEventUse,
-    () => (SLIDER.scrollLeft += -init)
-  );
-  BUTTONS_SLIDERR.addEventListener(
-    whatEventUse,
-    () => (SLIDER.scrollLeft += init)
-  );
-}
-*/
-const sections = [...document.querySelectorAll("[scroll-el]")];
-const text = [...document.querySelectorAll(".header-nav__link")];
-const logoText = document.querySelector(".logo__text");
-const header = document.querySelector(".header");
-const rectLogo = document.querySelector(".logo__rect");
-const homeArt = document.querySelector(".home-art");
-const main = document.querySelector(".main");
-const footer = document.querySelector(".footer");
-const aside = document.querySelector(".aside");
-const asideItems = document.querySelector(".aside-items");
-const artItem = [...document.querySelectorAll(".artists-items__item")];
 
 function observeControl() {
   if (aside) {
@@ -118,11 +104,10 @@ function start() {
   observeControl();
   focusController(artItem, "artists-items__content--active");
   focusController([footer], "footer--theme");
-  /*onClickHandler();
 
   window.addEventListener(whatEventUse, (event) => {
     openHeaderMenu(event);
-  });*/
+  });
 
   return () => window.addEventListener("resize", () => observeControl());
 }
