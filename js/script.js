@@ -50,19 +50,19 @@ function onClickHandler() {
   );
 }
 */
-const sections = [...document.querySelectorAll("#scroll")];
+const sections = [...document.querySelectorAll("[scroll-el]")];
 const text = [...document.querySelectorAll(".header-nav__link")];
 const logoText = document.querySelector(".logo__text");
 const header = document.querySelector(".header");
 const rectLogo = document.querySelector(".logo__rect");
 const homeArt = document.querySelector(".home-art");
-const main = document.querySelector(".main");
+const main = document.querySelector("[main-root]");
 
 function observeControl() {
-  const scrollRoot = main.offsetHeight + header.offsetHeight;
+  const scrollRoot = homeArt.offsetHeight + header.offsetHeight;
+  console.log(scrollRoot);
   const options = {
-    root: null,
-    rootMargin: `${scrollRoot * -1}px 0px 1000000px 0px`,
+    rootMargin: `${scrollRoot * -1}px 0px ${scrollRoot + 4}px 0px`,
     threshold: 0,
   };
 
@@ -73,7 +73,8 @@ function observeControl() {
         header.classList.add("header--theme");
         rectLogo.classList.add("logo__rect--theme");
         logoText.classList.add("logo__text--thema");
-      } else {
+      }
+      if (entry.isIntersecting) {
         text.forEach((e) => e.classList.remove("header-nav__link--theme"));
         header.classList.remove("header--theme");
         rectLogo.classList.remove("logo__rect--theme");
@@ -97,4 +98,6 @@ function start() {
   window.addEventListener(whatEventUse, (event) => {
     openHeaderMenu(event);
   });*/
+
+  return () => window.addEventListener("resize", () => observeControl());
 }
