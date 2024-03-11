@@ -50,11 +50,6 @@ function onClickHandler() {
   );
 }
 */
-const whatDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
-const whatEventUse = whatDevice ? "touchstart" : "click";
-const SLIDER = document.querySelector("." + "reviews-slider__content");
-const BUTTONS_SLIDERL = document.querySelector("#left");
-const BUTTONS_SLIDERR = document.querySelector("#right");
 const sections = [...document.querySelectorAll("[scroll-el]")];
 const text = [...document.querySelectorAll(".header-nav__link")];
 const logoText = document.querySelector(".logo__text");
@@ -65,21 +60,7 @@ const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
 const aside = document.querySelector(".aside");
 const asideItems = document.querySelector(".aside-items");
-const sliderItems = document.querySelector(".reviews-slider__items");
 const artItem = [...document.querySelectorAll(".artists-items__item")];
-
-const init = sliderItems.offsetWidth;
-function onClickHandler() {
-  if (!BUTTONS_SLIDERL || !BUTTONS_SLIDERR) return;
-  BUTTONS_SLIDERL.addEventListener(
-    whatEventUse,
-    () => (SLIDER.scrollLeft += -init)
-  );
-  BUTTONS_SLIDERR.addEventListener(
-    whatEventUse,
-    () => (SLIDER.scrollLeft += init)
-  );
-}
 
 function observeControl() {
   if (aside) {
@@ -137,9 +118,9 @@ function start() {
   observeControl();
   focusController(artItem, "artists-items__content--active");
   focusController([footer], "footer--theme");
-  onClickHandler();
+  /*onClickHandler();
 
-  /* window.addEventListener(whatEventUse, (event) => {
+  window.addEventListener(whatEventUse, (event) => {
     openHeaderMenu(event);
   });*/
 

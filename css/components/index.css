@@ -347,3 +347,71 @@ input[name="Name"] {
 .footer a:hover {
   color: rgba(255, 255, 0, 0.758);
 }
+
+@media only screen and (max-width: 1400px) {
+  .artists-items__content p {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .form__title {
+    font-size: 60px;
+  }
+  .artists-items__content h4 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .footer__wrapper,
+  .form__wrapper,
+  .art__wrapper,
+  .artists-items,
+  .main-img {
+    grid-template-columns: 1fr;
+  }
+  .artists-items__content p {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .block_stiky {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .aside {
+    display: block;
+    width: 100%;
+  }
+  .form {
+    grid-template-areas:
+      "name"
+      "email"
+      "comment"
+      "chekbox"
+      "button";
+  }
+  .artists-items__content p {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 417px) {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-align: center;
+  }
+
+  p {
+    font-size: 16px;
+  }
+  .artists-items__content p {
+    display: none;
+  }
+}

@@ -86,3 +86,8 @@ button {
   margin: auto;
   padding: 60px 50px;
 }
+
+.trms__items {
+  display: grid;
+  gap: 40px;
+}
