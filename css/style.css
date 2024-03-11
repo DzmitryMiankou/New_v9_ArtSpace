@@ -79,3 +79,10 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(174, 174, 174);
 }
+
+.term {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
+  padding: 60px 50px;
+}
