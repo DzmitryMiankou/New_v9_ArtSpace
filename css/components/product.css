@@ -1,0 +1,130 @@
+.product-main {
+  max-width: 1200px;
+  display: grid;
+  place-items: center;
+  margin: auto;
+}
+
+.slider {
+  display: grid;
+  place-items: center;
+  min-height: 400px;
+  position: relative;
+  padding-bottom: 80px;
+  background-size: cover;
+}
+
+.slider__title {
+  padding: 0 0 40px 0;
+}
+
+.reviews-slider {
+  width: 100%;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.reviews-slider__content {
+  display: flex;
+  gap: 20px;
+  transition: 0.5s;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.reviews-slider__items {
+  min-width: 300px;
+  background-color: #57340070;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+.slider__button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 47%;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.slider__button:hover {
+  fill: #ae6800;
+}
+
+.reviews-slider__button--start {
+  left: -5%;
+}
+.reviews-slider__button--end {
+  right: -5%;
+}
+
+.img_slider {
+  padding: 10px;
+  margin-top: auto;
+}
+
+.reviews-slider__items h4 {
+  padding: 10px;
+  margin: 0%;
+}
+
+.reviews-slider__button--start {
+  transform: rotate(180deg);
+}
+
+.all-price h5,
+.grid-block h5 {
+  color: black;
+  font-size: 55px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.img_end {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.img_end p {
+  text-align: justify;
+}
+
+.grid-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  margin: 150px 0;
+  gap: 40px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .grid-block,
+  .img_end {
+    grid-template-columns: 1fr;
+  }
+  .reviews-slider {
+    width: 80%;
+  }
+  .grid-block h1,
+  .grid-block h2,
+  .grid-block h3,
+  .grid-block h4,
+  .grid-block h5 {
+    font-size: 30px;
+  }
+  .reviews-slider__button--start {
+    left: 0%;
+  }
+  .reviews-slider__button--end {
+    right: 0%;
+  }
+}
