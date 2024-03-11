@@ -20,7 +20,8 @@
   }
 }
 
-.artists__wrapper {
+.artists__wrapper,
+.art__wrapper {
   max-width: var(--max-width);
   margin: auto;
   padding: 0 50px;
