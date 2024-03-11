@@ -16,6 +16,10 @@
   gap: 40px;
 }
 
+.gallery__wrapper h4 {
+  text-align: center;
+}
+
 .visitors {
   background-color: var(--yellow);
 }
@@ -48,4 +52,33 @@
 }
 .avatar__item p {
   font-size: 16px;
+}
+
+.allImg {
+  width: 80%;
+  margin: auto;
+}
+
+.comments,
+.visitors,
+.gallery-main {
+  display: grid;
+  place-items: center;
+}
+
+.arthome {
+  background-color: var(--yellow);
+  display: grid;
+  place-items: center;
+}
+
+.arthome__img {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.home {
+  display: grid;
+  gap: 40px;
 }
